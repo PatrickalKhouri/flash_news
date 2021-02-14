@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+News.destroy_all
+
+
+
+news_1 = News.create(user: User.first, title_es: "Fluminense en Libertadores", title_pt: "Fluminense na libertadores",
+description_es: "El Flumininense llego a Copa Libertadores pela primeira vez desde 2013",
+description_pt: "O Fluminense se classificou para a Copa Libertadores pela primeira vez desde 2013")
