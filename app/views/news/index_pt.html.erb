@@ -1,10 +1,6 @@
 <div class="container flags d-flex">
-  <%= link_to news_pt_path do %>
-    <%=image_tag("pt-br.jpg", class: "flags")%>
-  <% end %>
-<%= link_to news_pt_path do %>
-    <%=image_tag("es.jpg", class: "flags")%>
-  <% end %>
+   <%=image_tag("pt-br.jpg", class: "flags") %>
+   <%=image_tag("es.jpg", class: "flags") %>
 </div>
 
 <% @news.each do |news| %>
