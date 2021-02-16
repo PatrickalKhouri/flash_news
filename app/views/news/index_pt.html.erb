@@ -1,0 +1,16 @@
+<div class="container flags d-flex">
+   <%=image_tag("pt-br.jpg", class: "flags") %>
+   <%=image_tag("es.jpg", class: "flags") %>
+</div>
+
+<% @news.each do |news| %>
+<div class="card-trip">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <div class="card-trip-infos">
+    <div>
+      <h2><%= news.title_pt %></h2>
+    </div>
+    <p>Por <%= news.user.first_name %> <%= news.user.last_name %></p>
+  </div>
+</div>
+<% end %>
