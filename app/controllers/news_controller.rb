@@ -18,14 +18,15 @@ class NewsController < ApplicationController
   def new
     @news = News.new
     authorize @news
-    @news.user = current_user
+    
   end
 
   def create
     @news = News.new(news_params)
+    @news.user = current_user
     authorize @news
     if @news.save
-      redirect_to root_path
+      redirect_to news_path(@news.id)
     else
       render :new
     end
@@ -39,7 +40,7 @@ class NewsController < ApplicationController
     authorize @news
     @news.update(news_params)
     if @news.save
-      redirect_to news_pt_path(@news.id)
+      redirect_to news_path(@news.id)
     else
       render :edit
     end
