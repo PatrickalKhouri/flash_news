@@ -9,7 +9,7 @@
 
 <% @news.each do |news| %>
 <div class="card-trip">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <%= cl_image_tag news.photo.key %>
   <div class="card-trip-infos">
     <div>
       <h2><%= news.title_es %></h2>
