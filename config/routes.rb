@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   resources :news, only: %i[new create edit update destroy]
 
+  get 'news/es/:id', to: 'news#show_es', as: 'news_espanhol'
+  get 'news/pt/:id', to: 'news#show_pt', as: 'news_portugues'
   get 'news/pt', to: 'news#index_pt'
   get 'news/es', to: 'news#index_es'
 

@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="">
+    <div class="news-top">
+      <%= cl_image_tag @news.photo.key %>
+      <h1><%= @news.title_es %></h1>
+      <p id="timestamp"><%= @news.created_at.strftime("%d/%m/%Y")%> as <%= @news.created_at.hour %> hueras </p> </p>
+      <p id="author">Escrita por <%= @news.user.first_name %> <%= @news.user.last_name %> </p>
+    </div>
+    <div>
+      <p><%= @news.content_es %></p>
+    </div>
+  </div>
+  <%= link_to "Volver", news_pt_path, class: "btn btn-primary" %>
+</div>

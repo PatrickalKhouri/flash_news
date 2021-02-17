@@ -5,8 +5,12 @@ class NewsPolicy < ApplicationPolicy
     end
   end
 
-  def show?
+  def show_pt?
     true
+  end
+
+  def show_es?
+    show_pt?
   end
 
   def new?
