@@ -15,7 +15,7 @@
     <%= cl_image_tag news.photo.key %>
     <div class="card-trip-infos">
       <div>
-        <h2><%= news.title_pt %></h2>
+        <h2><%= link_to news.title_pt, news_portugues_path(news.id) %></h2>
         <p>postada dia <%= news.created_at.strftime("%d/%m/%Y")%> as <%= news.created_at.hour %> horas </p>
       </div>
       <p>Por <%= news.user.first_name %> <%= news.user.last_name %></p>
