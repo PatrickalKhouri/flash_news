@@ -4,11 +4,11 @@ class NewsController < ApplicationController
   before_action :set_news, only: [:edit, :update, :show, :destroy]
 
   def index_pt
-    @news = policy_scope(News)
+    @news = policy_scope(News).order(created_at: :desc)
   end
 
   def index_es
-    @news = policy_scope(News)
+    @news = policy_scope(News).order(created_at: :desc)
   end
 
   def show

@@ -10,10 +10,10 @@ class NewsPolicy < ApplicationPolicy
   end
 
   def new?
-    true
+    user.admin
   end
 
   def create?
-    true
+    user.admin
   end
 end

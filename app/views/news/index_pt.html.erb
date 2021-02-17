@@ -3,14 +3,23 @@
    <%=image_tag("es.jpg", class: "flags") %>
 </div>
 
-<% @news.each do |news| %>
-<div class="card-trip">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-  <div class="card-trip-infos">
-    <div>
-      <h2><%= news.title_pt %></h2>
-    </div>
-    <p>Por <%= news.user.first_name %> <%= news.user.last_name %></p>
+<div class="news">
+  <div class="d-flex">
+    <h4 id="titulo-pt">Flash News - O seu portal de notícias</h4>
+    <% if current_user.admin %>
+      <%= link_to "Adicionar Notícia", new_news_path, class: 'btn btn-primary' %>
+    <% end %>
   </div>
+  <% @news.each do |news| %>
+  <div class="card-trip">
+    <%= cl_image_tag news.photo.key %>
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= news.title_pt %></h2>
+        <p>postada dia <%= news.created_at.strftime("%d/%m/%Y")%> as <%= news.created_at.hour %> horas </p>
+      </div>
+      <p>Por <%= news.user.first_name %> <%= news.user.last_name %></p>
+    </div>
+  </div>
+  <% end %>
 </div>
-<% end %>

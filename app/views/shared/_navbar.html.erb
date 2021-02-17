@@ -11,7 +11,6 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
         <li class="nav-item active">
           <%= link_to "Home", "#", class: "nav-link" %>
         </li>
@@ -39,7 +38,6 @@
             <%= link_to "Entrar/Se Inscrever", new_user_session_path, class: "nav-link" %>
           </li>
         <% end %>
-      <% end %>
     </ul>
   </div>
 </div>
