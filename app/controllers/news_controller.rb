@@ -1,7 +1,7 @@
 class NewsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index_pt, :index_es]
+  skip_before_action :authenticate_user!, only: [:index_pt, :index_es, :show_pt, :show_es]
 
-  before_action :set_news, only: [:edit, :update, :show, :destroy]
+  before_action :set_news, only: [:edit, :update, :show_pt, :show_es, :destroy]
 
   def index_pt
     @news = policy_scope(News).order(created_at: :desc)
@@ -11,7 +11,10 @@ class NewsController < ApplicationController
     @news = policy_scope(News).order(created_at: :desc)
   end
 
-  def show
+  def show_pt
+    authorize @news
+  end
+  def show_es
     authorize @news
   end
 
