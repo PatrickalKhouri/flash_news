@@ -43,7 +43,7 @@ class NewsController < ApplicationController
     authorize @news
     @news.update(news_params)
     if @news.save
-      redirect_to news_path(@news.id)
+      redirect_to news_portugues_path(@news.id)
     else
       render :edit
     end

@@ -1,0 +1,13 @@
+<div class="container mt-3">
+  <h5>Editar/Edicion Notícia</h5>
+  <div class="mt-5 d-flex justify-content-center flex-column col-8">
+    <%= simple_form_for @news  do |f| %>
+      <%= f.input :title_pt, label: "Titulo em Português"%>
+      <%= f.input :title_es, label: "Titulo em Espanhol"%>
+      <%= f.input :content_pt, label: "Conteudo em Portugues"%>
+      <%= f.input :content_es, label: "Conteudo em Espanhol"%> 
+      <%= f.input :photo, as: :file %>
+      <%= f.submit class: "btn btn-primary mb-5" %>
+    <% end %>
+  </div>
+</div>
