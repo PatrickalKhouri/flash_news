@@ -11,4 +11,15 @@
     </div>
   </div>
   <%= link_to "Voltar", news_pt_path, class: "btn btn-primary" %>
+
+  <div class="update delete cont">
+      <% if current_user.admin %>
+        <%= link_to "Editar Notícia", edit_news_path(@news.id) , class: "btn btn-primary" %>
+        <%= link_to "Deletar notícia",
+            news_path(@news),
+            method: :delete,
+            data: { confirm: "Tem certeza que quer deletar a notícia?" },
+            class: "btn btn-primary" %>
+      <% end %>
+  </div>
 </div>
