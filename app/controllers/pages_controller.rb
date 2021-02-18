@@ -3,4 +3,11 @@ class PagesController < ApplicationController
   
   def home
   end
+
+  def admin_page
+  end
+
+  def user_admin
+    @users = User.all
+  end
 end

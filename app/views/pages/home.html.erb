@@ -1,2 +1,5 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<% unless current.user.active %>
+  <h1>Você foi bloqueado, por favor entrar em contato com o administrador do sistema</h1>
+<% else %>
+  <h1>Seja bem vindo ao Flash News</h1>
+<% end%>

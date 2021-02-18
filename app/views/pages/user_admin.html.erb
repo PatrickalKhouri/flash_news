@@ -1,0 +1,30 @@
+<div>
+  <div class=users>
+  <h5>Usuários</h5>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Primeiro nome</th>
+          <th scope="col">Sobrenome</th>
+          <th scope="col">Email</th>
+          <th scope="col">Status</th>
+          <th scope="col">Ação</th>
+
+        </tr>
+      </thead>
+      <tbody>
+          <% @users.each do |user| %>
+          <tr>
+            <th scope="row"><%= user.id %></th>
+            <td><%= user.first_name %></td>
+            <td><%= user.last_name %></td>
+            <td><%= user.email %></td>
+            <td><%= user.active ? "Ativo" : "Banido" %></td>
+            <td class="btn btn-primary"><%= user.active ? "Banir" : "Desbanir" %></td>
+          </tr>
+          <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

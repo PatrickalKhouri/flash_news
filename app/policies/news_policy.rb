@@ -6,7 +6,7 @@ class NewsPolicy < ApplicationPolicy
   end
 
   def show_pt?
-    true
+    user.active
   end
 
   def show_es?

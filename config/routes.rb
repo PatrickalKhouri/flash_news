@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   get 'news/pt', to: 'news#index_pt'
   get 'news/es', to: 'news#index_es'
 
+  get 'admin', to: 'pages#admin_page'
+  get 'admin/users', to: 'pages#user_admin', as: 'user_admin'
 end
