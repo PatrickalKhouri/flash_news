@@ -7,7 +7,7 @@ class PagesController < ApplicationController
   def admin_page
   end
 
-  def admin
+  def user_admin
     @users = User.all
   end
 end

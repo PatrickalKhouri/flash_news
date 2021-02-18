@@ -11,5 +11,5 @@ Rails.application.routes.draw do
   get 'news/es', to: 'news#index_es'
 
   get 'admin', to: 'pages#admin_page'
-  get 'admin/users', to: 'pages#admin'
+  get 'admin/users', to: 'pages#user_admin', as: 'user_admin'
 end

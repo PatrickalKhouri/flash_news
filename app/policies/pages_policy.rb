@@ -13,7 +13,7 @@ class PagesPolicy < ApplicationPolicy
     user.admin
   end
 
-  def admin
+  def user_admin?
     user.admin
   end
 end
