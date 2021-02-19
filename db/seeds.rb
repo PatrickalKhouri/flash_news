@@ -9,7 +9,6 @@
 News.destroy_all
 Tag.destroy_all
 
-
 puts 'creating news'
 
 news_1 = News.create(user: User.first, title_es: "Fluminense en Libertadores", title_pt: "Fluminense na libertadores",
@@ -31,7 +30,9 @@ content_pt: "O Palmeiras é bi campeão da liberadores! Venceu o Santos por 1x0"
 file = URI.open('https://www.lance.com.br/files/article_main/uploads/2020/10/23/5f934aa7e3969.jpeg')
 news_3.photo.attach(io: file, filename: 'flu_liberta.jpg')
 
-puts 'news created'
+array = [ news_1, news_2, news_3 ]
+
+puts "news #{array.length} created"
 
 puts "Creating Tags"
 
