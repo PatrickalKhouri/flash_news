@@ -46,6 +46,12 @@ gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
 
+# source 'https://rails-assets.org' do
+#  gem 'rails-assets-tether', '>= 1.3.3' 
+#  # add the line below
+#  gem 'rails-assets-chosen'
+# end
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'

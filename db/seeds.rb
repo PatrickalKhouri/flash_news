@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 News.destroy_all
+Tag.destroy_all
 
 
 puts 'creating news'
@@ -31,3 +32,12 @@ file = URI.open('https://www.lance.com.br/files/article_main/uploads/2020/10/23/
 news_3.photo.attach(io: file, filename: 'flu_liberta.jpg')
 
 puts 'news created'
+
+puts "Creating Tags"
+
+Tag.create(name: "Recipe", language: 'PT')
+Tag.create(name: "Travel", language: 'PT')
+Tag.create(name: "Fashion/Beauty", language: 'PT')
+Tag.create(name: "Humour", language: 'PT')
+
+puts "Tags Created!"

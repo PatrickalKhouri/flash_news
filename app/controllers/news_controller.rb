@@ -14,6 +14,7 @@ class NewsController < ApplicationController
   def show_pt
     authorize @news
   end
+  
   def show_es
     authorize @news
   end
@@ -63,6 +64,6 @@ class NewsController < ApplicationController
 
 
   def news_params
-    params.require(:news).permit(:title_es, :title_pt, :content_es, :content_pt, :photo)
+    params.require(:news).permit(:title_es, :title_pt, :content_es, :content_pt, :tag_list, :tag, { tag_ids: [] }, :tag_ids, :photo,)
   end
 end

@@ -4,6 +4,11 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   resources :news, only: %i[new create edit update destroy]
+  resources :tags, only: %i[index new create destroy]
+  # get 'tags', to: 'tags#index'
+
+  # get 'tags/:id', to: 'tags#show', as: :specific_tag
+  # get 'tags/:tag', to: 'news#index_pt', as: :news_tag
 
   get 'news/es/:id', to: 'news#show_es', as: 'news_espanhol'
   get 'news/pt/:id', to: 'news#show_pt', as: 'news_portugues'

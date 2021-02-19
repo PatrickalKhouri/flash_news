@@ -5,6 +5,7 @@
       <h1><%= @news.title_pt %></h1>
       <p id="timestamp"><%= @news.created_at.strftime("%d/%m/%Y")%> as <%= @news.created_at.hour %> horas </p> </p>
       <p id="author">Escrita por <%= @news.user.first_name %> <%= @news.user.last_name %> </p>
+      <p><small>Tags: <%= raw @news.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></small></p>
     </div>
     <div>
       <p><%= @news.content_pt %></p>

@@ -1,0 +1,10 @@
+<div class="container mt-3">
+  <h5>Novo Tag</h5>
+  <div class="mt-5 d-flex justify-content-center flex-column col-8">
+    <%= simple_form_for @tag  do |f| %>
+      <%= f.input :name, label: "Nome/Nombre"%>
+      <%= f.input :language, label: "Lingua/Langua", collection: ["PT", "ES"]  %>
+      <%= f.submit class: "btn btn-primary mb-5" %>
+    <% end %>
+  </div>
+</div>
