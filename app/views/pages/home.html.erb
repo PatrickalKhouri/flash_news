@@ -1,5 +1,9 @@
-<% unless current.user.active %>
-  <h1>Você foi bloqueado, por favor entrar em contato com o administrador do sistema</h1>
+<% if user_signed_in?  %>
+  <% if current_user.active  %>
+    <h1>Seja bem vindo ao Flash News</h1>
+  <% else %>
+    <h1>Você foi bloqueado, por favor entrar em contato com o administrador do sistema</h1>
+  <% end%>
 <% else %>
   <h1>Seja bem vindo ao Flash News</h1>
 <% end%>

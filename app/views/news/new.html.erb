@@ -7,6 +7,7 @@
       <%= f.input :content_pt, label: "Conteudo em Portugues"%>
       <%= f.input :content_es, label: "Conteudo em Espanhol"%> 
       <%= f.input :photo, as: :file %>
+      <%= f.input :tag_ids, as: :select, collection: Tag.order(:name), label_method: :name, input_html: {multiple: true} %>
       <%= f.submit class: "btn btn-primary mb-5" %>
     <% end %>
   </div>

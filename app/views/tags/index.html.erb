@@ -1,0 +1,30 @@
+<div>
+  <div class=tags>
+  <div class= "d-flex">
+    <h5>Tags</h5>
+    <%= link_to "Novo Tag", new_tag_path, class: "btn btn-primary" %>
+  </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Nome/Nombre</th>
+          <th scope="col">Lingua/Langua</th>
+          <th scope="col">Accion</th>
+        </tr>
+      </thead>
+      <tbody>
+          <% @tags.each do |tag| %>
+          <tr>
+            <td><%= tag.name %></td>
+            <td><%= tag.language %></td>
+            <td> <%= link_to "Delete",
+            tag_path(tag),
+            method: :delete,
+            data: { confirm: "Are you sure?" },
+            class: "btn btn-primary" %></td>
+           </tr>
+          <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

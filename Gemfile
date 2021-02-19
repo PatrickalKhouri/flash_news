@@ -22,6 +22,9 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# gem 'foundation-rails'
+# gem 'autoprefixer-rails'
+
 gem 'pundit'
 # Authorization
 
@@ -42,6 +45,12 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
+
+# source 'https://rails-assets.org' do
+#  gem 'rails-assets-tether', '>= 1.3.3' 
+#  # add the line below
+#  gem 'rails-assets-chosen'
+# end
 
 group :development, :test do
   gem 'pry-byebug'
