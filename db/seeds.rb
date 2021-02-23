@@ -6,8 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-News.destroy_all
+#News.destroy_all
 Tag.destroy_all
+Video.destroy_all
 
 puts 'creating news'
 
@@ -42,3 +43,16 @@ Tag.create(name: "Fashion/Beauty", language: 'PT')
 Tag.create(name: "Humour", language: 'PT')
 
 puts "Tags Created!"
+
+puts 'Creating Languages'
+
+Language.create(name: "PT")
+Language.create(name: "ES")
+
+puts "Creating videos"
+
+video_1 = Video.create(user: User.first, title_es: "Fluminense en Libertadores", title_pt: "Fluminense na libertadores",
+description_es: "El Flumininense llego a Copa Libertadores pela primeira vez desde 2013",
+description_pt: "O Fluminense se classificou para a Copa Libertadores pela primeira vez desde 2013")
+
+puts "Videos created"

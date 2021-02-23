@@ -30,7 +30,7 @@ class NewsController < ApplicationController
     @news.user = current_user
     authorize @news
     if @news.save
-      redirect_to news_portugues_path(@news.id)
+      redirect_to news_pt_path(@news.id)
     else
       render :new
     end
@@ -44,7 +44,7 @@ class NewsController < ApplicationController
     authorize @news
     @news.update(news_params)
     if @news.save
-      redirect_to news_portugues_path(@news.id)
+      redirect_to news_pt_path(@news.id)
     else
       render :edit
     end

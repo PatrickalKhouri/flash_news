@@ -13,7 +13,7 @@
   <%= link_to "Voltar", news_pt_path, class: "btn btn-primary" %>
 
   <div class="update delete cont">
-      <% if current_user.admin %>
+     <% if user_signed_in? && current_user.admin %>
         <%= link_to "Editar Notícia", edit_news_path(@news.id) , class: "btn btn-primary" %>
         <%= link_to "Deletar notícia",
             news_path(@news),
@@ -22,4 +22,16 @@
             class: "btn btn-primary" %>
       <% end %>
   </div>
+
+  <section class="section comments">
+	<div class="container">
+		<h2 class="is-5"><strong><%= @news.comments.count %></strong> Commentarios </h2>
+		<%= render @news.comments %>
+		<div class="comment-form">
+			<hr />
+			<h3 class="is-3">Leave a reply</h3>
+	 		<%= render 'comments/form' %>
+		</div>
+	</div>
+</section>
 </div>
