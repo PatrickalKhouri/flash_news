@@ -2,15 +2,6 @@ class CommentsController < ApplicationController
 
   before_action :set_news, only: [ :create]
 
-  #def index
-  #  @comments = @news.comments
-  #end
-
-  #def new
-  #  @comment = Comment.new
-  #  authorize @comment
-  #end
-
   def create
     #@comment = Comment.new(comment_params)
     @comment = @news.comments.create(params[:comment].permit(:description))
