@@ -1,13 +1,12 @@
 class CommentsController < ApplicationController
 
-  before_action :set_news, only: [ :create]
+  before_action :set_news, only: [ :create, :destroy]
 
   def create
     #@comment = Comment.new(comment_params)
     @comment = @news.comments.create(params[:comment].permit(:description))
     @comment.user = current_user
     @comment.language = Language.first
-    @comment.video_id = Video.first.id
     @comment.news = @news
     authorize @comment
     if @comment.save
@@ -16,6 +15,12 @@ class CommentsController < ApplicationController
       flash[:alert] = 'Something went wrong'          # TODO
       render :new 
     end
+  end
+
+  def destroy
+    @comment = @news.comments.find(params[:id])
+    @comment.destroy
+    redirect_to news_pt_path(@news, anchor: 'footer')
   end
 
   private
