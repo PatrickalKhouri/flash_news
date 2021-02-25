@@ -30,7 +30,7 @@ class NewsController < ApplicationController
     @news.user = current_user
     authorize @news
     if @news.save
-      redirect_to news_path(@news.id)
+      redirect_to news_pt_path(@news.id)
     else
       render :new
     end
@@ -44,7 +44,7 @@ class NewsController < ApplicationController
     authorize @news
     @news.update(news_params)
     if @news.save
-      redirect_to news_portugues_path(@news.id)
+      redirect_to news_pt_path(@news.id)
     else
       render :edit
     end
@@ -64,6 +64,6 @@ class NewsController < ApplicationController
 
 
   def news_params
-    params.require(:news).permit(:title_es, :title_pt, :content_es, :content_pt, :tag_list, :tag, { tag_ids: [] }, :tag_ids, :photo,)
+    params.require(:news).permit(:title_es, :title_pt, :content_es, :content_pt, :photo,)
   end
 end

@@ -6,17 +6,16 @@
 <div class="news">
   <div class="d-flex">
     <h4 id="titulo-pt">Flash News - O seu portal de notícias</h4>
-    <% if current_user.admin %>
+   <% if user_signed_in? && current_user.admin %> 
       <%= link_to "Adicionar Notícia", new_news_path, class: 'btn btn-primary' %>
-    <% end %>
+    <% end%>
   </div>
   <% @news.each do |news| %>
   <div class="card-trip">
     <%= cl_image_tag news.photo.key %>
     <div class="card-trip-infos">
       <div>
-        <h2><%= link_to news.title_pt, news_portugues_path(news.id) %></h2>
-        <p><small>Tags: <%= raw news.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></small></p>
+        <h2><%= link_to news.title_pt, news_pt_path(news.id) %></h2>
         <p>postada dia <%= news.created_at.strftime("%d/%m/%Y")%> as <%= news.created_at.hour %> horas </p>
       </div>
       <p>Por <%= news.user.first_name %> <%= news.user.last_name %></p>

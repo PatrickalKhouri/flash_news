@@ -1,0 +1,19 @@
+<div class="box">
+  <article class="media">
+    <div class="media-content">
+      <div class="content">
+        <p>
+          <strong><%= comment.user.first_name %>:</strong>
+          <%= comment.description %>
+        </p>
+      </div>
+    </div>
+    <% if user_signed_in? %>
+      <% if current_user.admin || current_user == comment.user %>
+        <%= link_to 'Delete', [comment.news, comment],
+          method: :delete, class: "button is-danger", data: { confirm: 'Are you sure?' } %>
+      <% end %>
+    <% end %>
+  </article>
+
+</div>
